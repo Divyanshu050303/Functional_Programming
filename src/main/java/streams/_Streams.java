@@ -18,10 +18,13 @@ public class _Streams {
                 new Person1("Adarsh", PREFER_NOT_TO_SAY)
 
         );
-        people.stream()
-                .map(person1 -> person1.name)
-                .collect(Collectors.toSet())
-                .forEach(System.out::println);
+//        people.stream()
+//                .map(person1 -> person1.name)
+//                .collect(Collectors.toSet())
+//                .forEach(System.out::println);
+        boolean containOnlyFemale=people.stream()
+                .anyMatch(person1 -> FEMALE.equals(person1.gender));
+        System.out.println(containOnlyFemale);
     }
 
     static class Person1 {
